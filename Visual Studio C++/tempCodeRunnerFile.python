@@ -1,0 +1,23 @@
+import tkinter as tk
+from time import strftime
+
+def time():
+    string = strftime('%H:%M:%S %p')
+    label.config(text=string)
+    label.after(1000, time)
+
+# Creating the main window
+root = tk.Tk()
+root.title("Desktop Clock")
+
+# Configuring the label widget
+label = tk.Label(root, font=('calibri', 40, 'bold'), background='black', foreground='white')
+
+# Placing the label on the window
+label.pack(anchor='center')
+
+# Calling the time function to update the clock
+time()
+
+# Running the Tkinter event loop
+root.mainloop()
